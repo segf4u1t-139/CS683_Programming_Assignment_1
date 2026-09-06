@@ -7,7 +7,7 @@ void conv_tile(const float* in, float* out, const float* ker,
 
     const int p = K / 2;
     const int in_stride = W + 2 * p;  // padded row stride
-    int tile_size = 48;
+    int tile_size = 1024;
 
     for (int Ty = 0; Ty < H; Ty += tile_size) {
         int tile_end_y = Ty + tile_size < H ? Ty + tile_size : H;
